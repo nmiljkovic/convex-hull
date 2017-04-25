@@ -3,6 +3,7 @@ import solveGraham from "./solver/graham-scan";
 import solveMonotoneChain from "./solver/monotone-chain";
 import {
   solveAklToussaintHeuristicGraham,
+  solveAklToussaintHeuristicJarvisMarch,
   solveAklToussaintHeuristicMonotoneChain
 } from "./solver/akl-toussaint-heuristic";
 
@@ -19,6 +20,8 @@ export const solutionSelector = createSelector(
         return solveAklToussaintHeuristicGraham(points);
       case 'akl-toussaint-heuristic-monotone':
         return solveAklToussaintHeuristicMonotoneChain(points);
+      case 'akl-toussaint-heuristic-jarvis-march':
+        return solveAklToussaintHeuristicJarvisMarch(points);
       default:
         return solveGraham(points);
     }

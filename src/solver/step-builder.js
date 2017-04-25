@@ -22,7 +22,9 @@ class StepBuilder {
   }
 
   removeLastEdge() {
-    this.edges.pop();
+    if (this.edges.length) {
+      this.edges.pop();
+    }
     return this;
   }
 

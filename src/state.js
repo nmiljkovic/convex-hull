@@ -21,6 +21,10 @@ export const algorithms = State({
         text: 'Heuristic Monotone Chain',
         value: 'akl-toussaint-heuristic-monotone',
       },
+      {
+        text: 'Heuristic Jarvis March',
+        value: 'akl-toussaint-heuristic-jarvis-march',
+      },
     ],
   },
   selectAlgorithm: (state, algorithm) => {

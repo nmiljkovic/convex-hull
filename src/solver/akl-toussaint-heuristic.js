@@ -1,6 +1,7 @@
 import createStepBuilder from "./step-builder";
 import {solveGrahamHull} from "./graham-scan";
 import {solveMonotoneChainHull} from "./monotone-chain";
+import {solveJarvisMarchHull} from "./jarvis-march";
 
 function pointSub(p1, p2) {
   return {
@@ -131,4 +132,14 @@ export function solveAklToussaintHeuristicMonotoneChain(points) {
   points = reduce(steps, builder, points);
 
   return solveMonotoneChainHull(steps, builder, points);
+}
+
+export function solveAklToussaintHeuristicJarvisMarch(points) {
+  const steps = [];
+  const builder = createStepBuilder(points);
+  steps.push(builder.build());
+
+  points = reduce(steps, builder, points);
+
+  return solveJarvisMarchHull(steps, builder, points);
 }
